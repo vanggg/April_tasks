@@ -1,0 +1,35 @@
+HTTP/1.1 and HTTP/2 are both protocols used for communication between web clients (such as browsers) and servers. While they serve the same fundamental purpose, they differ significantly in their approach to optimizing and enhancing web performance.
+
+The key differences between HTTP/1.1 and HTTP/2:
+1.Multiplexing and Concurrent Requests:
+HTTP/1.1: With HTTP/1.1, each request and response is processed sequentially. This means that if a webpage requires multiple resources (e.g., images, scripts, stylesheets), each resource is fetched one at a time, leading to potential latency issues.
+HTTP/2: HTTP/2 introduces multiplexing, allowing multiple requests and responses to be sent and received in parallel over a single TCP connection. This significantly reduces latency and improves the overall performance of web applications, especially on high-latency networks.
+Header Compression:
+HTTP/1.1: Headers are sent with every request and response, often containing redundant information. This can result in increased bandwidth usage and slower page load times.
+HTTP/2: HTTP/2 employs header compression techniques, such as Huffman encoding and HPACK, to reduce the size of headers. This optimization minimizes overhead and conserves bandwidth, leading to faster data transmission.
+Server Push:
+HTTP/1.1: In HTTP/1.1, web servers can only respond to client requests. If a webpage requires additional resources beyond what the client has requested, such as images referenced in HTML, separate requests must be made to fetch them.
+HTTP/2: HTTP/2 introduces server push, allowing servers to proactively send resources to the client before they are requested. This preemptive approach can eliminate the need for additional round trips, further enhancing performance and reducing latency.
+Stream Prioritization:
+HTTP/1.1: Requests are processed in the order they are received, with no built-in mechanism for prioritization. This can lead to situations where critical resources are delayed due to the queuing of less important requests.
+HTTP/2: HTTP/2 introduces stream prioritization, enabling clients to assign priority levels to individual streams. This allows critical resources, such as the HTML document of a webpage, to be prioritized over non-essential resources, leading to improved rendering times and user experience.
+Connection Handling:
+HTTP/1.1: In HTTP/1.1, multiple TCP connections are often used to overcome the limitations of sequential processing. However, each TCP connection carries its own overhead, resulting in increased resource utilization and complexity.
+HTTP/2: HTTP/2 utilizes a single, persistent TCP connection for all communication between the client and server. This connection can be reused for multiple requests, reducing latency and minimizing overhead associated with connection establishment.
+
+# Objects
+
+objects are a fundamental data type used to store collections of key-value pairs, where keys are strings (or symbols) and values can be of any data type, including other objects, functions, arrays, and primitives. Objects provide a powerful way to organize and manipulate data in JavaScript.
+
+Internally, JavaScript engines typically implement objects using one of two main techniques: dictionary-based and class-based representations.
+
+Dictionary-based Representation:
+In this representation, objects are implemented using a structure similar to a dictionary or hashmap.
+Each object is essentially a collection of properties, where each property is stored with its associated key.
+This representation allows for dynamic property addition and removal at runtime.
+Accessing properties involves a lookup operation based on the property name.
+Class-based Representation:
+With the introduction of ES6 (ECMAScript 2015), JavaScript introduced class syntax for defining objects using a more traditional class-based approach.
+Under the hood, class-based objects are still implemented using prototype-based inheritance.
+Classes in JavaScript are syntactic sugar over prototype-based inheritance.
+Objects can inherit properties and methods from other objects through prototype-based inheritance.
